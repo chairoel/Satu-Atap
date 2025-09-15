@@ -1,0 +1,33 @@
+# OS
+.DS_Store
+
+# IDE: ignore all, keep only if sengaja dibagi
+*.iml
+.idea/
+!.idea/codeStyles/
+!.idea/runConfigurations/
+
+# Gradle / Android
+.gradle/
+**/build/
+local.properties
+captures/
+
+# NDK / CMake
+.externalNativeBuild/
+.cxx/
+
+# Artifacts
+*.apk
+*.ap_
+*.aab
+
+# Keystores & signing (jangan pernah commit)
+*.jks
+*.keystore
+keystore.properties
+signing.properties
+*.keystore.properties
+
+# Optional: editor/tooling
+.vscode/
