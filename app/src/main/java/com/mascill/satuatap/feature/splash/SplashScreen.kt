@@ -1,4 +1,4 @@
-package com.mascill.satuatap.presentation.screen
+package com.mascill.satuatap.feature.splash
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
@@ -21,7 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mascill.satuatap.R
-import com.mascill.satuatap.ui.theme.SatuAtapTheme
+import com.mascill.satuatap.core.designsystem.SatuAtapTheme
 import kotlinx.coroutines.delay
 
 @Composable

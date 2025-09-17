@@ -1,4 +1,4 @@
-package com.mascill.satuatap.presentation.viewmodel
+package com.mascill.satuatap.feature.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
