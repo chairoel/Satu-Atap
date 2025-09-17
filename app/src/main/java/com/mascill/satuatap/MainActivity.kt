@@ -1,16 +1,17 @@
 package com.mascill.satuatap
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
+import android.view.View
+import android.view.animation.AnticipateInterpolator
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.runtime.*
+import androidx.core.animation.doOnEnd
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.mascill.satuatap.presentation.screen.HomeScreen
+import com.mascill.satuatap.presentation.screen.SplashScreen
 import com.mascill.satuatap.ui.theme.SatuAtapTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,33 +19,46 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Install splash screen
+        val splashScreen = installSplashScreen()
+
         super.onCreate(savedInstanceState)
+
+        // Customize splash screen animation
+        splashScreen.setOnExitAnimationListener { splashScreenView ->
+            val slideUp = ObjectAnimator.ofFloat(
+                splashScreenView.view,
+                "translationY",
+                0f,
+                -2000f
+            )
+            slideUp.interpolator = AnticipateInterpolator()
+            slideUp.duration = 500L
+
+            slideUp.doOnEnd { splashScreenView.remove() }
+            slideUp.start()
+        }
+
         enableEdgeToEdge()
         setContent {
             SatuAtapTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                MainNavigation()
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+fun MainNavigation() {
+    var showSplash by remember { mutableStateOf(true) }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SatuAtapTheme {
-        Greeting("Android")
+    if (showSplash) {
+        SplashScreen(
+            onNavigateToMain = {
+                showSplash = false
+            }
+        )
+    } else {
+        HomeScreen()
     }
 }
