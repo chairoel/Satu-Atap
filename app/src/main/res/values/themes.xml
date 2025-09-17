@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SatuAtap" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
 
-    <style name="Theme.SatuAtap" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.SatuAtap" parent="Base.Theme.SatuAtap" />
+
+    <!-- Splash Screen Theme -->
+    <style name="Theme.SatuAtap.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_logo</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="windowSplashScreenIconBackgroundColor">@color/splash_primary</item>
+        <item name="postSplashScreenTheme">@style/Theme.SatuAtap</item>
+    </style>
 </resources>
