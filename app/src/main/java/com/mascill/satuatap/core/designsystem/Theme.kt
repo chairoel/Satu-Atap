@@ -1,4 +1,4 @@
-package com.mascill.satuatap.ui.theme
+package com.mascill.satuatap.core.designsystem
 
 import android.app.Activity
 import android.os.Build
@@ -14,6 +14,16 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
+import com.mascill.satuatap.core.designsystem.tokens.OnSurfaceDark
+import com.mascill.satuatap.core.designsystem.tokens.OnSurfaceLight
+import com.mascill.satuatap.core.designsystem.tokens.Pink40
+import com.mascill.satuatap.core.designsystem.tokens.Pink80
+import com.mascill.satuatap.core.designsystem.tokens.SatuAtapAccent
+import com.mascill.satuatap.core.designsystem.tokens.SatuAtapBlue
+import com.mascill.satuatap.core.designsystem.tokens.SatuAtapLightBlue
+import com.mascill.satuatap.core.designsystem.tokens.SurfaceDark
+import com.mascill.satuatap.core.designsystem.tokens.SurfaceLight
+import com.mascill.satuatap.core.designsystem.tokens.Typography
 
 private val DarkColorScheme = darkColorScheme(
     primary = SatuAtapAccent,

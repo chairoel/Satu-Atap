@@ -1,8 +1,7 @@
-package com.mascill.satuatap
+package com.mascill.satuatap.navigation
 
 import android.animation.ObjectAnimator
 import android.os.Bundle
-import android.view.View
 import android.view.animation.AnticipateInterpolator
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,9 +9,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.*
 import androidx.core.animation.doOnEnd
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.mascill.satuatap.presentation.screen.HomeScreen
-import com.mascill.satuatap.presentation.screen.SplashScreen
-import com.mascill.satuatap.ui.theme.SatuAtapTheme
+import com.mascill.satuatap.feature.home.HomeScreen
+import com.mascill.satuatap.feature.splash.SplashScreen
+import com.mascill.satuatap.core.designsystem.SatuAtapTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

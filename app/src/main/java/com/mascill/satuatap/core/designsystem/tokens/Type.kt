@@ -1,4 +1,4 @@
-package com.mascill.satuatap.ui.theme
+package com.mascill.satuatap.core.designsystem.tokens
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
